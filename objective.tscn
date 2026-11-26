@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfb1o4r11p6pn"]
+
+[ext_resource type="Script" uid="uid://dkxw5y58ig3qo" path="res://area_2d.gd" id="1_n0a23"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_05stc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u2eeh"]
+radius = 28.0
+height = 76.0
+
+[node name="objective" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_n0a23")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Area2D"]
+position = Vector2(156.125, 174)
+scale = Vector2(55.75, 35.000015)
+mesh = SubResource("CapsuleMesh_05stc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(156, 174)
+shape = SubResource("CapsuleShape2D_u2eeh")
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
