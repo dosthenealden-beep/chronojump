@@ -13,10 +13,10 @@ config_version=5
 config/name="chronojump-(4.5)"
 config/description="game about a time traveler"
 config/version="Beta.2.3-stable"
+config/tags=PackedStringArray("inprogress", "mainproject")
 run/main_scene="res://scene/city/journey.tscn"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
-config/tags=PackedStringArray("inprogress", "mainproject")
 
 [display]
 
