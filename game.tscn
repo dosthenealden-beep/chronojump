@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://wspxp66qos1h"]
+
+[ext_resource type="PackedScene" uid="uid://bkh0eq62g3qrj" path="res://scene/city/journey.tscn" id="1_e2o6t"]
+
+[node name="Game" type="Node2D"]
+
+[node name="ChronoJump" parent="." instance=ExtResource("1_e2o6t")]
+position = Vector2(182.00003, 77.000015)
+scale = Vector2(0.8, 0.8)

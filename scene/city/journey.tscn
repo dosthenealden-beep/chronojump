@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkh0eq62g3qrj"]
+
+[ext_resource type="PackedScene" uid="uid://bfa7et76gjia5" path="res://present_world.tscn" id="2"]
+
+[node name="ChronoJump" type="Node2D"]
+
+[node name="CityInEditor" parent="." instance=ExtResource("2")]
+position = Vector2(0, 3)

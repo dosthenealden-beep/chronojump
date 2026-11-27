@@ -169,6 +169,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_i3pqv")
+SPEED = 100.0
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -177,3 +178,7 @@ shape = SubResource("CapsuleShape2D_715ky")
 [node name="motion" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_715ky")
 animation = &"idle_sides"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(8, 8)
+limit_enabled = false

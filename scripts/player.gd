@@ -4,9 +4,11 @@ extends CharacterBody2D
 @onready var _animated_sprite = $motion;
 var screen_size;
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+@export var SPEED:float = 300.0
+@export var JUMP_VELOCITY:float = -200.0
+
 var last_direction = Vector2.ZERO;
+
 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
@@ -57,6 +59,15 @@ func handleMotion(delta):
 		elif (last_direction.x == -1):
 			_animated_sprite.flip_h = true
 			_animated_sprite.play("idle_sides")
+			
+	var axis = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down");
+	
+	#force single axis: keep only the dominant direction
+	if axis.x and axis.y:
+		if abs(axis.x) > abs(axis.y):
+			direction = Vector2.ZERO
+		else:
+			direction = Vector2.ZERO
 		
 	position += direction * delta
 	position = position.clamp(Vector2.ZERO, screen_size)

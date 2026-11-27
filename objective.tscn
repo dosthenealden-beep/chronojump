@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfb1o4r11p6pn"]
 
-[ext_resource type="Script" uid="uid://dkxw5y58ig3qo" path="res://area_2d.gd" id="1_n0a23"]
+[ext_resource type="Script" uid="uid://dgcd6f8u7cmxd" path="res://static_body_2d.gd" id="1_n0a23"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_05stc"]
 
@@ -10,16 +10,18 @@ height = 76.0
 
 [node name="objective" type="Node2D"]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+input_pickable = true
 script = ExtResource("1_n0a23")
+metadata/_edit_group_ = true
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Area2D"]
-position = Vector2(156.125, 174)
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+position = Vector2(-2.3841858e-07, -4.7683716e-07)
 scale = Vector2(55.75, 35.000015)
 mesh = SubResource("CapsuleMesh_05stc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(156, 174)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.12500995, -4.7683716e-07)
 shape = SubResource("CapsuleShape2D_u2eeh")
 
-[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="input_event" from="StaticBody2D" to="StaticBody2D" method="_on_input_event"]
